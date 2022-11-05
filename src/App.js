@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Login from "../src/pages/Login/Index";
+import Dashboard from "../src/pages/Dashboard/Index";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { AuthenticationContext } from "./context/Authcontext";
+import { useContext } from "react";
+import Forgot from "../src/pages/Forgot-Password/index";
+import PhoneVerify from "../src/pages/PhoneVerify/Index"
+
 
 function App() {
+  const {token} = useContext(AuthenticationContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Routes>
+        <Route path="/" element={token ? <Navigate to="/dashboard" /> : <Login />} />
+        <Route path="/forgot-password" element={token ? <Navigate to="/dashboard" /> : < Forgot/>} />
+        <Route path="/phone-verify" element={token ? <Navigate to="/dashboard" /> : < PhoneVerify/>} />
+        <Route path="/dashboard" element={token ? <Dashboard /> : <Navigate to="/" />} />
+        <Route path="*" element={<h1>404 page</h1>} />
+      </Routes>
+
   );
 }
 

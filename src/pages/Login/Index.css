@@ -1,0 +1,62 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.Auth-form-container {
+  background-image: url("https://cdn.pixabay.com/photo/2017/08/24/03/41/starry-sky-2675322_960_720.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.Auth-form {
+  width: 550px;
+  position: absolute;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  border-radius: 8px;
+  background-color: white;
+  z-index: 99;
+}
+
+.Auth-form-title {
+  text-align: center;
+  font-size: 30px;
+  color: rgb(34, 34, 34);
+  font-weight: 800;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(34, 34, 34);
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.hide_show {
+  cursor: pointer;
+  position: absolute;
+  bottom: 8px;
+  right: 6px;
+}
+.btn {
+  background-color: dodgerblue;
+  cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: large;
+}
+
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
